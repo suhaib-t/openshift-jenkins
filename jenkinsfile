@@ -1,0 +1,30 @@
+pipeline {
+    agent any
+
+    environment {
+        OPENSHIFT_SERVER = 'https://127.0.0.1:6443' // Use internal IP if accessing from Jenkins on the same VM
+        OPENSHIFT_PROJECT = 'default'
+        OPENSHIFT_CREDENTIALS = '0ad75e2d-c68c-4b1e-8c39-9aff5b1a225f' 
+        IMAGE_NAME = 'my-node-app'
+    }
+
+    stages {
+        stage('Build') {
+            steps {
+                script {
+                    // Trigger OpenShift BuildConfig
+                    openshiftBuild(buildConfig: 'my-node-app-build', showBuildLogs: 'true')
+                }
+            }
+        }
+
+        stage('Deploy') {
+            steps {
+                script {
+                    // Deploy the built image
+                    openshiftDeploy(deploymentConfig: 'my-node-app')
+                }
+            }
+        }
+    }
+}
