@@ -1,5 +1,5 @@
 pipeline {
-    agent any
+    agent { 'azure-crc' }
 
     environment {
         OPENSHIFT_SERVER = 'https://api.crc.testing:6443'
