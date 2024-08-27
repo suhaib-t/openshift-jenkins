@@ -9,14 +9,6 @@ pipeline {
     }
     
     stages {
-        // stage('Checkout Code') {
-        //     steps {
-        //         // Checkout code from Git repository
-        //         checkout([$class: 'GitSCM',
-        //                   userRemoteConfigs: [[url: 'https://github.com/suhaib-t/openshift-jenkins.git']]])
-        //     }
-        // }
-
         stage('Login to OpenShift') {
             steps {
                 script {
