@@ -37,7 +37,7 @@ pipeline {
                     // Apply the deployment configuration
                     sh '''
                     set -e
-                    oc apply -f deployment.yaml
+                    oc apply -f /home/suhaib/deployment.yaml
                     # Expose the service if not already exposed
                     # oc expose svc/my-node-app-deployment
                     '''
