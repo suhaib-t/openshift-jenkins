@@ -5,7 +5,7 @@ pipeline {
         OPENSHIFT_SERVER = 'https://api.crc.testing:6443'
         OPENSHIFT_PROJECT = 'default'
         OPENSHIFT_USER = 'kubeadmin'
-        OPENSHIFT_PASSWORD = 'vuI2I-95rdJ-wqnwr-Ar2ne'
+        OPENSHIFT_PASSWORD = 'rR3Xh-Rku3C-KTUWL-zyKhb'
     }
 
     stages {
